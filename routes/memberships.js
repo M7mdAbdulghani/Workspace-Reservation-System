@@ -6,9 +6,14 @@ const {
   createMembership,
   updateMembership,
   deleteMembership,
+  deleteMemberships,
 } = require("../controllers/memberships");
 
-router.route("/").get(getMemberships).post(createMembership);
+router
+  .route("/")
+  .get(getMemberships)
+  .post(createMembership)
+  .delete(deleteMemberships);
 router
   .route("/:id")
   .get(getMembership)
