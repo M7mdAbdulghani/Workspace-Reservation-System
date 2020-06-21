@@ -15,6 +15,7 @@ const memberships = require("./routes/memberships");
 
 //Models
 const Membership = require("./models/Membership");
+const bh_spaces = require("./models/bh_spaces");
 
 const app = express();
 
@@ -46,6 +47,11 @@ sequelize
   .catch((err) => {
     console.log("Error: " + err);
   });
+
+// // Find all users
+// bh_spaces.findAll().then((spaces) => {
+//   console.log("All Spaces:", JSON.stringify(spaces, null, 4));
+// });
 
 //Running the Server
 const PORT = process.env.PORT || 4000;
